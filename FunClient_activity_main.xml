@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="FunClient"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Connection Status -->
+        <TextView
+            android:id="@+id/tvConnectionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Status: Disconnected"
+            android:textColor="#FF0000"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ============ PICTURE SECTION ============ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📷 Pictures"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Picture #: "
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etPictureNumber"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="1"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnRequestPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Picture"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Image Display Area -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#EEEEEE"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/ivPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:contentDescription="Requested picture" />
+
+            <TextView
+                android:id="@+id/tvPicturePlaceholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="No picture loaded"
+                android:textColor="#999999"
+                android:textSize="16sp" />
+
+        </FrameLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CCCCCC"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ============ AUDIO SECTION ============ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎵 Audio Clips"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clip #: "
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etClipNumber"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="1"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btnPlayClip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▶ Play"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Playback Status -->
+        <TextView
+            android:id="@+id/tvPlaybackStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Playback: Idle"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Playback Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⏸ Pause"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnResume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="▶ Resume"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⏹ Stop"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+        <!-- Status / Log area -->
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5"
+            android:padding="8dp"
+            android:text="Log:\n"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:maxLines="10"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</ScrollView>
